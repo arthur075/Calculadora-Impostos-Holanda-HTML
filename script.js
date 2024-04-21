@@ -16,7 +16,8 @@ function calcularSalarioComImpostos() {
         switch (tipoSalario) {
             case 'Diário':
                 // Lógica para cálculo diário
-                salarioComImpostos = salario * 30 * 12;
+                salario = salario * 30 * 12;
+                salarioComImpostos = salario;
                 if (salarioComImpostos <= 75518) {
                     imposto = (salarioComImpostos * 36.93) / 100;
                     salarioComImpostos = salarioComImpostos - imposto;
@@ -27,7 +28,8 @@ function calcularSalarioComImpostos() {
                 break;
             case 'Semanal':
                 // Lógica para cálculo semanal
-                salarioComImpostos = salario * 4 * 12;
+                salario = salario * 4 * 12;
+                salarioComImpostos = salario;
                 if (salarioComImpostos <= 75518) {
                     imposto = (salarioComImpostos * 36.93) / 100;
                     salarioComImpostos = salarioComImpostos - imposto;
@@ -38,7 +40,8 @@ function calcularSalarioComImpostos() {
                 break;
             case 'Mensal':
                 // Lógica para cálculo mensal
-                salarioComImpostos = salario * 12;
+                salario = salario * 12;
+                salarioComImpostos = salario;
                 if (salarioComImpostos <= 75518) {
                     imposto = (salarioComImpostos * 36.93) / 100;
                     salarioComImpostos = salarioComImpostos - imposto;
@@ -49,7 +52,8 @@ function calcularSalarioComImpostos() {
                 break;
             case 'Anual':
                 // Lógica para cálculo anual
-                salarioComImpostos = salario * 1;
+                salario = salario * 1;
+                salarioComImpostos = salario;
                 if (salarioComImpostos <= 75518) {
                     imposto = (salarioComImpostos * 36.93) / 100;
                     salarioComImpostos = salarioComImpostos - imposto;
