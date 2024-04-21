@@ -4,71 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de impostos Holanda</title>
-
-    <style>
-        body {
-            background-image: linear-gradient(45deg, purple, black);
-
-
-        }
-
-        .container {
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #eee;
-            padding: 15px;
-            max-width: 400px;
-            width: 50%;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 15px;
-        }
-
-        .container02 {
-            background-color: grey;
-            width: 80%;
-            max-width: 300px;
-            height: 200px;
-            margin-top: auto;
-            margin-bottom: auto;
-            display: flex;
-            flex-direction: column; /* Alterado para empilhar os elementos verticalmente */
-            align-items: center; /* Adicionado para centralizar os itens horizontalmente */
-            padding: 20px; /* Adicionado espaçamento interno */
-            justify-content: space-around;
-            border-radius: 15px;
-        }
-
-        /* Estilo para o select */
-        .select {
-            width: 100%; /* Faz o select ocupar toda a largura da div */
-            padding: 10px; /* Adiciona um espaçamento interno */
-            font-size: 16px; /* Tamanho da fonte */
-            border: none; /* Remove a borda padrão */
-            border-radius: 5px; /* Adiciona bordas arredondadas */
-            backdrop-filter: grey;
-        }
-        .inputSalario {
-            width: 70%;
-            height: 35px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            backdrop-filter: grey;
-            padding: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 
 <div class="container">
     <h1>Calculadora impostos</h1>
+    <h3>Os impostos da Holanda atualmente se encontram da seguinte maneira: menos que: €75.518(por ano) 36,93% de impostos
+        mais que: € 75,518(por ano)	49,50% de impostos (2023)</h3>
 
     <div class="container02">
         <p style="margin-bottom: 10px;">Escolha de que forma você deseja informar o seu salário:</p>
@@ -78,10 +22,13 @@
             <option value="Mensal">Mensal</option>
             <option value="Anual">Anual</option>
         </select>
-        <input class="inputSalario" type="number" placeholder="Digite o Salario aqui">
+        <input class="inputSalario" type="number" placeholder="Digite o Salario aqui" id="salarioInput">
+        <p id="resultado">O seu salário com os impostos descontados é de: <span id="salarioComImpostos"></span></p>
     </div>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
