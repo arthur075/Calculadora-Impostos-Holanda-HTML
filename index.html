@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de impostos Holanda</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-
+<div class="container00">
 <div class="container">
     <h1>Calculadora impostos</h1>
     <h3>Os impostos da Holanda atualmente se encontram da seguinte maneira: menos que: €75.518(por ano) 36,93% de impostos
-        mais que: € 75,518(por ano)	49,50% de impostos (2023)</h3>
+        mais que: € 75,518(por ano) 49,50% de impostos (2023)</h3>
 
     <div class="container02">
         <p style="margin-bottom: 10px;">Escolha de que forma você deseja informar o seu salário:</p>
@@ -25,9 +24,15 @@
         <input class="inputSalario" type="number" placeholder="Digite o Salario aqui" id="salarioInput">
         <p id="resultado">O seu salário anual com os impostos descontados é de: <span id="salarioComImpostos"></span></p>
     </div>
-
 </div>
-
+<!-- Div para mostrar os detalhes do cálculo -->
+<div id="detalhesCalculo" class="container02 hidden">
+    <h3>Detalhes do Cálculo:</h3>
+    <p id="subtotal">Subtotal: <span></span></p>
+    <p id="impostos">Impostos: <span></span></p>
+    <p id="totalEstimado">Total Estimado: <span></span></p>
+</div>
+</div>
 
 <script src="script.js"></script>
 

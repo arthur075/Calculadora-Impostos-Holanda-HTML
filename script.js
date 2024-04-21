@@ -12,56 +12,63 @@ function calcularSalarioComImpostos() {
     var salarioComImpostos = 0;
     var imposto = 0;
 
-    // Realizar cálculos com base no tipo de salário selecionado
-    switch (tipoSalario) {
-        case 'Diário':
-            // Lógica para cálculo diário
-            salarioComImpostos = salario * 30 * 12;
-            if (salarioComImpostos <= 75518) {
-                imposto = (salarioComImpostos * 36.93) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            } else if (salarioComImpostos > 75518) {
-                imposto = (salarioComImpostos * 49.50) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            }
-            break;
-        case 'Semanal':
-            // Lógica para cálculo semanal
-            salarioComImpostos = salario * 4 * 12;
-            if (salarioComImpostos <= 75518) {
-                imposto = (salarioComImpostos * 36.93) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            } else if (salarioComImpostos > 75518) {
-                imposto = (salarioComImpostos * 49.50) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            }
-            break;
-        case 'Mensal':
-            // Lógica para cálculo mensal
-            salarioComImpostos = salario * 12;
-            if (salarioComImpostos <= 75518) {
-                imposto = (salarioComImpostos * 36.93) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            } else if (salarioComImpostos > 75518) {
-                imposto = (salarioComImpostos * 49.50) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            }
-            break;
-        case 'Anual':
-            // Lógica para cálculo anual
-            salarioComImpostos = salario * 1;
-            if (salarioComImpostos <= 75518) {
-                imposto = (salarioComImpostos * 36.93) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            } else if (salarioComImpostos > 75518) {
-                imposto = (salarioComImpostos * 49.50) / 100;
-                salarioComImpostos = salarioComImpostos - imposto;
-            }
-            break;
-        default:
-            console.log('Tipo de salário não reconhecido');
-    }
+        // Realizar cálculos com base no tipo de salário selecionado
+        switch (tipoSalario) {
+            case 'Diário':
+                // Lógica para cálculo diário
+                salarioComImpostos = salario * 30 * 12;
+                if (salarioComImpostos <= 75518) {
+                    imposto = (salarioComImpostos * 36.93) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                } else if (salarioComImpostos > 75518) {
+                    imposto = (salarioComImpostos * 49.50) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                }
+                break;
+            case 'Semanal':
+                // Lógica para cálculo semanal
+                salarioComImpostos = salario * 4 * 12;
+                if (salarioComImpostos <= 75518) {
+                    imposto = (salarioComImpostos * 36.93) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                } else if (salarioComImpostos > 75518) {
+                    imposto = (salarioComImpostos * 49.50) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                }
+                break;
+            case 'Mensal':
+                // Lógica para cálculo mensal
+                salarioComImpostos = salario * 12;
+                if (salarioComImpostos <= 75518) {
+                    imposto = (salarioComImpostos * 36.93) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                } else if (salarioComImpostos > 75518) {
+                    imposto = (salarioComImpostos * 49.50) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                }
+                break;
+            case 'Anual':
+                // Lógica para cálculo anual
+                salarioComImpostos = salario * 1;
+                if (salarioComImpostos <= 75518) {
+                    imposto = (salarioComImpostos * 36.93) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                } else if (salarioComImpostos > 75518) {
+                    imposto = (salarioComImpostos * 49.50) / 100;
+                    salarioComImpostos = salarioComImpostos - imposto;
+                }
+                break;
+            default:
+                console.log('Tipo de salário não reconhecido');
+        }
+    
 
     // Exibir o resultado na página
-    document.getElementById('salarioComImpostos').textContent = salarioComImpostos.toFixed(2); // Arredondando para 2 casas decimais
+    document.getElementById('salarioComImpostos').textContent = salarioComImpostos.toFixed(2);
+
+    // Mostrar os detalhes do cálculo
+    document.getElementById('detalhesCalculo').classList.remove('hidden');
+    document.getElementById('subtotal').querySelector('span').textContent = salario.toFixed(2);
+    document.getElementById('impostos').querySelector('span').textContent = imposto.toFixed(2);
+    document.getElementById('totalEstimado').querySelector('span').textContent = (salarioComImpostos).toFixed(2);
 }
