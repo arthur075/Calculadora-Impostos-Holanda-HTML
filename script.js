@@ -69,6 +69,7 @@ function calcularSalarioComImpostos() {
 
     // Exibir o resultado na página
     document.getElementById('salarioComImpostos').textContent = salarioComImpostos.toFixed(2);
+    
 
     // Mostrar os detalhes do cálculo
     document.getElementById('detalhesCalculo').classList.remove('hidden');
